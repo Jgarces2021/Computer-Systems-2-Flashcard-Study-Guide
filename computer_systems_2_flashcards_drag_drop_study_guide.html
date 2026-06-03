@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Computer Systems 2 Study Guide | Flashcards + Drag-and-Drop Matching</title>
+<style>
+:root{
+  --blue:#2563eb;--blue2:#1e40af;--sky:#eff6ff;--ink:#111827;--muted:#64748b;--line:#dbe5f3;--green:#16a34a;--red:#dc2626;--yellow:#f59e0b;--card:#ffffff;--soft:#f8fafc;
+}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#f8fbff,#eef4ff);color:var(--ink)}
+.hero{background:linear-gradient(135deg,#1e3a8a,#2563eb 55%,#4f7df3);color:white;padding:34px 24px 42px;border-bottom-left-radius:34px;border-bottom-right-radius:34px;box-shadow:0 18px 45px rgba(37,99,235,.25)}
+.hero-inner{max-width:1180px;margin:0 auto}.eyebrow{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:8px 13px;font-weight:800;font-size:.9rem;margin-bottom:14px}
+h1{font-size:clamp(2rem,5vw,4.5rem);line-height:1;margin:0 0 12px;font-weight:950;letter-spacing:-.04em}.subtitle{font-size:clamp(1rem,2vw,1.35rem);max-width:900px;opacity:.95;line-height:1.45;margin:0}.wrap{max-width:1180px;margin:-24px auto 60px;padding:0 18px}.panel{background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:28px;box-shadow:0 14px 35px rgba(15,23,42,.08);padding:22px;margin-bottom:20px}.standard-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.standard-card{background:white;border:1px solid var(--line);border-radius:22px;padding:18px;min-height:112px}.standard-card b{font-size:2.3rem;color:var(--blue);display:block}.standard-card span{font-weight:850;color:#334155}.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.btn{border:none;border-radius:15px;padding:12px 16px;font-weight:900;cursor:pointer;background:var(--blue);color:white;box-shadow:0 8px 18px rgba(37,99,235,.22)}.btn:hover{transform:translateY(-1px)}.btn.secondary{background:#eaf1ff;color:#1d4ed8;box-shadow:none;border:1px solid #c7d8ff}.btn.gray{background:#f1f5f9;color:#334155;box-shadow:none;border:1px solid var(--line)}.btn.green{background:var(--green)}.btn.red{background:var(--red)}select{border:1px solid var(--line);border-radius:15px;padding:12px 14px;font-weight:800;background:white;color:#1f2937}.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}.flashcard{min-height:360px;border-radius:30px;background:radial-gradient(circle at top left,#dbeafe,#fff 45%);border:2px solid #cfe0fb;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:32px;cursor:pointer;position:relative;overflow:hidden}.flashcard:before{content:"";position:absolute;width:210px;height:210px;border-radius:50%;background:rgba(37,99,235,.08);right:-55px;top:-55px}.tag{position:absolute;top:18px;left:18px;background:#e0edff;color:#1d4ed8;border:1px solid #bcd2ff;border-radius:999px;padding:7px 11px;font-weight:900;font-size:.85rem}.card-count{position:absolute;top:18px;right:18px;color:var(--muted);font-weight:900}.flash-term{font-size:clamp(2rem,5vw,4.8rem);font-weight:950;letter-spacing:-.04em;margin:22px 0 10px;z-index:1}.flash-def{font-size:clamp(1.2rem,2.2vw,1.8rem);font-weight:800;color:#334155;line-height:1.35;max-width:820px;z-index:1}.hint{color:var(--muted);font-weight:800;margin-top:18px;z-index:1}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}.stat{background:white;border:1px solid var(--line);border-radius:20px;padding:18px}.stat b{font-size:2rem;color:var(--blue);display:block}.stat span{font-weight:850;color:var(--muted)}.progress{height:14px;border-radius:999px;background:#e5edfb;overflow:hidden;margin-top:14px}.bar{height:100%;width:0%;background:linear-gradient(90deg,#2563eb,#22c55e);transition:.3s}.card-list{max-height:458px;overflow:auto;padding-right:4px}.list-item{border:1px solid var(--line);border-radius:18px;padding:14px 16px;margin-bottom:10px;background:white;font-weight:900;cursor:pointer}.list-item.active{border-color:#2563eb;background:#eff6ff;color:#1d4ed8}.list-item small{color:var(--muted);font-weight:850}.section-title{display:flex;justify-content:space-between;align-items:end;gap:10px;flex-wrap:wrap}h2{font-size:clamp(1.5rem,3vw,2.4rem);letter-spacing:-.03em;margin:0 0 10px}.match-layout{display:grid;grid-template-columns:1fr 1.25fr;gap:18px;margin-top:16px}.term-bank,.drop-zone-wrap{display:grid;gap:10px}.drag-term{padding:13px 14px;background:#eff6ff;border:2px solid #c7d8ff;color:#1d4ed8;border-radius:16px;font-weight:950;cursor:grab;user-select:none}.drag-term.used{opacity:.35}.drop-card{min-height:78px;background:white;border:2px dashed #cbd5e1;border-radius:18px;padding:12px;display:grid;grid-template-columns:1fr minmax(150px,.55fr);gap:12px;align-items:center}.drop-card.over{background:#eff6ff;border-color:#2563eb}.definition{font-weight:800;line-height:1.35;color:#334155}.answer-slot{min-height:48px;border-radius:14px;background:#f8fafc;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;font-weight:950;color:#334155}.drop-card.correct{border-style:solid;border-color:#16a34a;background:#f0fdf4}.drop-card.wrong{border-style:solid;border-color:#dc2626;background:#fef2f2}.feedback{margin-top:14px;border-radius:18px;padding:14px 16px;font-weight:900;background:#f8fafc;border:1px solid var(--line)}.feedback.good{background:#f0fdf4;color:#166534;border-color:#bbf7d0}.feedback.bad{background:#fef2f2;color:#991b1b;border-color:#fecaca}.quiz-grid{display:grid;gap:12px}.quiz-card{background:white;border:1px solid var(--line);border-radius:18px;padding:16px}.quiz-card p{font-weight:900;margin:0 0 10px}.choice{display:block;width:100%;text-align:left;border:1px solid var(--line);background:#f8fafc;border-radius:13px;padding:10px 12px;margin:7px 0;font-weight:800;cursor:pointer}.choice.correct{background:#f0fdf4;border-color:#16a34a;color:#166534}.choice.wrong{background:#fef2f2;border-color:#dc2626;color:#991b1b}.footer{color:#64748b;text-align:center;font-weight:750;margin:28px 0}@media(max-width:900px){.two-col,.match-layout,.standard-grid{grid-template-columns:1fr}.drop-card{grid-template-columns:1fr}.flashcard{min-height:330px}.stats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="hero-inner"><div class="eyebrow">Computer Systems 2 • Sophomore Exam Study Tool</div><h1>Flashcards + Drag-and-Drop Matching</h1><p class="subtitle">Study operating systems, security, software troubleshooting, and operational procedures. Flip cards, track what you know, then practice matching terms to definitions.</p></div></header>
+<main class="wrap">
+<section class="panel standard-grid"><div class="standard-card"><b>47%</b><span>Operating Systems</span></div><div class="standard-card"><b>13%</b><span>Security</span></div><div class="standard-card"><b>27%</b><span>Software Troubleshooting</span></div><div class="standard-card"><b>13%</b><span>Operational Procedures</span></div></section>
+<section class="panel"><div class="section-title"><div><h2>Flashcard Study</h2><p class="subtitle" style="color:#64748b">Click the large card to flip. Use the buttons to mark what you know or need to practice.</p></div><div class="controls"><select id="filter"><option value="All">All Standards</option><option>Operating Systems</option><option>Security</option><option>Software Troubleshooting</option><option>Operational Procedures</option></select><button class="btn secondary" onclick="shuffleCards()">Shuffle Cards</button></div></div><div class="two-col"><div><div id="flashcard" class="flashcard" onclick="flipCard()"><div class="tag" id="cardTag"></div><div class="card-count" id="cardCount"></div><div class="flash-term" id="cardTerm"></div><div class="flash-def" id="cardDef"></div><div class="hint" id="cardHint">Click to reveal the answer</div></div><div class="controls" style="margin-top:14px"><button class="btn gray" onclick="prevCard()">Previous</button><button class="btn" onclick="nextCard()">Next</button><button class="btn green" onclick="markKnown()">I Know This</button><button class="btn red" onclick="markPractice()">Need Practice</button></div><div class="stats"><div class="stat"><b id="knownCount">0</b><span>Known cards</span></div><div class="stat"><b id="practiceCount">0</b><span>Need practice</span></div><div class="stat"><b id="setCount">0</b><span>Cards in this set</span></div></div><div class="progress"><div id="progressBar" class="bar"></div></div></div><div><h2 style="font-size:1.4rem">Card List</h2><div class="card-list" id="cardList"></div></div></div></section>
+<section class="panel"><div class="section-title"><div><h2>Drag-and-Drop Matching Game</h2><p class="subtitle" style="color:#64748b">Drag each term into the definition it matches. Each new set randomly picks 8 to 10 terms from the full study pool.</p></div><div class="controls"><button class="btn secondary" onclick="drawNewMatchSet()">Draw New Random Set</button><button class="btn gray" onclick="resetMatchSet()">Reset Current Set</button><button class="btn green" onclick="gradeMatchSet()">Grade Current Set</button></div></div><div class="match-layout"><div><h2 style="font-size:1.25rem">Terms</h2><div id="termBank" class="term-bank"></div></div><div><h2 style="font-size:1.25rem">Definitions</h2><div id="dropZones" class="drop-zone-wrap"></div></div></div><div id="matchFeedback" class="feedback">Draw a set, drag the terms, then grade your answers.</div></section>
+<section class="panel"><h2>Quick Check</h2><p class="subtitle" style="color:#64748b;margin-bottom:14px">A few fast questions to help students check understanding before the exam.</p><div id="quiz" class="quiz-grid"></div></section>
+<div class="footer">Computer Systems 2 Study Guide • Built for classroom review</div>
+</main>
+<script>
+const cards = [
+{term:'Clean Install',cat:'Operating Systems',def:'An OS installation that starts fresh and usually removes the previous operating system, apps, and files.'},
+{term:'In-place Upgrade',cat:'Operating Systems',def:'An OS upgrade that keeps user files, settings, and applications while moving to a newer version.'},
+{term:'PXE Boot',cat:'Operating Systems',def:'A network boot method used to start or install an operating system from a network server.'},
+{term:'GPT',cat:'Operating Systems',def:'A modern partition style commonly used with UEFI systems and large drives.'},
+{term:'NTFS',cat:'Operating Systems',def:'A Windows file system that supports permissions, encryption, and large files.'},
+{term:'FAT32',cat:'Operating Systems',def:'An older file system with wide compatibility but a smaller individual file size limit.'},
+{term:'exFAT',cat:'Operating Systems',def:'A file system often used for flash drives because it works across many systems and supports larger files than FAT32.'},
+{term:'dir',cat:'Operating Systems',def:'A Windows command that lists files and folders in the current directory.'},
+{term:'cd',cat:'Operating Systems',def:'A command used to change directories in Windows or Linux.'},
+{term:'ipconfig',cat:'Operating Systems',def:'A Windows command that displays IP address, subnet mask, gateway, and other network settings.'},
+{term:'ping',cat:'Operating Systems',def:'A command used to test whether another device or website can be reached over the network.'},
+{term:'tracert',cat:'Operating Systems',def:'A command that shows the path packets take to reach a destination.'},
+{term:'netstat',cat:'Operating Systems',def:'A command that displays active network connections and listening ports.'},
+{term:'nslookup',cat:'Operating Systems',def:'A command used to test DNS name resolution.'},
+{term:'sfc',cat:'Operating Systems',def:'A Windows tool used to scan and repair protected system files.'},
+{term:'chkdsk',cat:'Operating Systems',def:'A command used to check a disk for file system errors and bad sectors.'},
+{term:'diskpart',cat:'Operating Systems',def:'A command-line tool used to manage disks, partitions, and volumes.'},
+{term:'taskkill',cat:'Operating Systems',def:'A command used to force a running process or application to close.'},
+{term:'gpupdate',cat:'Operating Systems',def:'A command used to refresh Group Policy settings on a Windows computer.'},
+{term:'robocopy',cat:'Operating Systems',def:'A powerful Windows command used to copy files and folders, often for backups or migrations.'},
+{term:'Device Manager',cat:'Operating Systems',def:'A Windows tool used to view hardware, update drivers, disable devices, and troubleshoot device problems.'},
+{term:'Task Manager',cat:'Operating Systems',def:'A Windows tool used to view running apps, processes, performance, startup apps, and users.'},
+{term:'Disk Management',cat:'Operating Systems',def:'A Windows tool used to initialize drives, create partitions, extend or shrink volumes, and assign drive letters.'},
+{term:'Event Viewer',cat:'Operating Systems',def:'A Windows tool used to view system, security, and application logs.'},
+{term:'MSConfig',cat:'Operating Systems',def:'A Windows utility used to manage boot options, services, startup settings, and troubleshooting tools.'},
+{term:'System Restore',cat:'Operating Systems',def:'A Windows feature that can roll system settings back to an earlier restore point.'},
+{term:'Remote Desktop',cat:'Operating Systems',def:'A feature that lets a user connect to and control another Windows computer remotely.'},
+{term:'Workgroup',cat:'Operating Systems',def:'A small peer-to-peer network setup where computers manage their own accounts and security.'},
+{term:'Domain',cat:'Operating Systems',def:'A centrally managed network where user accounts, policies, and permissions are controlled by servers.'},
+{term:'Time Machine',cat:'Operating Systems',def:'A macOS backup tool used to back up and restore files or the system.'},
+{term:'Finder',cat:'Operating Systems',def:'The macOS tool used to browse files, folders, drives, and applications.'},
+{term:'sudo',cat:'Operating Systems',def:'A Linux command that runs a command with elevated administrator privileges.'},
+{term:'chmod',cat:'Operating Systems',def:'A Linux command used to change file or folder permissions.'},
+{term:'apt-get',cat:'Operating Systems',def:'A Linux command used on Debian-based systems to install, update, or remove software packages.'},
+{term:'Mantrap',cat:'Security',def:'A physical security area with two controlled doors used to prevent unauthorized entry.'},
+{term:'Badge Reader',cat:'Security',def:'A physical access device that reads an ID card to allow or deny entry.'},
+{term:'Privacy Screen',cat:'Security',def:'A screen filter that prevents people nearby from easily seeing private information.'},
+{term:'Active Directory',cat:'Security',def:'A Microsoft directory service used to manage users, computers, groups, and policies in a domain.'},
+{term:'Group Policy',cat:'Security',def:'A feature used to centrally control user and computer settings in a Windows domain.'},
+{term:'MFA',cat:'Security',def:'Multifactor authentication, which requires more than one proof of identity.'},
+{term:'Least Privilege',cat:'Security',def:'The practice of giving users only the access they need to do their job.'},
+{term:'WEP',cat:'Security',def:'An older wireless security protocol that is considered weak and insecure.'},
+{term:'WPA2',cat:'Security',def:'A stronger wireless security protocol commonly used to protect Wi-Fi networks.'},
+{term:'RADIUS',cat:'Security',def:'A centralized authentication service often used for network or wireless access.'},
+{term:'Ransomware',cat:'Security',def:'Malware that locks or encrypts files and demands payment to restore access.'},
+{term:'Trojan',cat:'Security',def:'Malware that disguises itself as legitimate software.'},
+{term:'Keylogger',cat:'Security',def:'Malware or hardware that records keystrokes to steal information.'},
+{term:'Rootkit',cat:'Security',def:'Malware designed to hide itself and maintain privileged access to a system.'},
+{term:'Worm',cat:'Security',def:'Malware that can spread itself across networks without needing a user to open it each time.'},
+{term:'Spyware',cat:'Security',def:'Software that secretly collects user information or activity.'},
+{term:'Phishing',cat:'Security',def:'A social engineering attack that tricks users into giving up information, often through fake emails or websites.'},
+{term:'Spear Phishing',cat:'Security',def:'A targeted phishing attack aimed at a specific person or organization.'},
+{term:'Shoulder Surfing',cat:'Security',def:'Watching someone enter private information, such as a password or PIN.'},
+{term:'Tailgating',cat:'Security',def:'Following an authorized person into a secure area without permission.'},
+{term:'Dumpster Diving',cat:'Security',def:'Searching trash for sensitive information or useful data.'},
+{term:'DDoS',cat:'Security',def:'An attack where many systems flood a target with traffic to make it unavailable.'},
+{term:'Zero-day',cat:'Security',def:'A vulnerability that is exploited before a fix is available.'},
+{term:'Man-in-the-middle',cat:'Security',def:'An attack where someone secretly intercepts or alters communication between two parties.'},
+{term:'Brute Force',cat:'Security',def:'An attack that tries many password combinations until one works.'},
+{term:'BitLocker',cat:'Security',def:'A Windows full-disk encryption feature used to protect data on a drive.'},
+{term:'EFS',cat:'Security',def:'A Windows feature that encrypts individual files or folders.'},
+{term:'Drive Wipe',cat:'Security',def:'A data destruction method that overwrites data so it cannot be easily recovered.'},
+{term:'Degaussing',cat:'Security',def:'Using a strong magnetic field to destroy data on magnetic storage media.'},
+{term:'Slow Performance',cat:'Software Troubleshooting',def:'A common symptom that may be caused by malware, startup apps, low resources, disk issues, or updates.'},
+{term:'Blue Screen',cat:'Software Troubleshooting',def:'A serious Windows crash screen often related to drivers, hardware, or system errors.'},
+{term:'No OS Found',cat:'Software Troubleshooting',def:'An error that can happen when the system cannot find a bootable operating system.'},
+{term:'Safe Mode',cat:'Software Troubleshooting',def:'A troubleshooting mode that starts Windows with minimal drivers and services.'},
+{term:'Roll Back Driver',cat:'Software Troubleshooting',def:'Returning to a previous driver version when a new driver causes problems.'},
+{term:'Restart Services',cat:'Software Troubleshooting',def:'A common fix when a Windows service fails or an application depends on a stopped service.'},
+{term:'Disable Startup Apps',cat:'Software Troubleshooting',def:'A solution for slow boot or poor performance caused by too many apps opening at startup.'},
+{term:'Reimage',cat:'Software Troubleshooting',def:'Reloading a computer from a prepared system image to restore a working configuration.'},
+{term:'Browser Redirection',cat:'Software Troubleshooting',def:'A symptom where malware or unwanted software sends the browser to unexpected websites.'},
+{term:'Rogue Antivirus',cat:'Software Troubleshooting',def:'Fake security software that scares users into paying or installing malware.'},
+{term:'Quarantine',cat:'Software Troubleshooting',def:'Separating an infected computer from the network to prevent malware from spreading.'},
+{term:'Restore Point',cat:'Software Troubleshooting',def:'A saved system state that Windows can return to after troubleshooting or malware cleanup.'},
+{term:'Knowledge Base',cat:'Operational Procedures',def:'A collection of articles or documentation used to solve repeated technical problems.'},
+{term:'Incident Documentation',cat:'Operational Procedures',def:'A record of what happened, what actions were taken, and the final outcome.'},
+{term:'Acceptable Use Policy',cat:'Operational Procedures',def:'A policy that explains how users may and may not use company technology.'},
+{term:'Asset Tag',cat:'Operational Procedures',def:'A label or barcode used to track company-owned equipment.'},
+{term:'Change Board',cat:'Operational Procedures',def:'A group that reviews and approves major technology changes before they happen.'},
+{term:'Backout Plan',cat:'Operational Procedures',def:'A plan for reversing a change if something goes wrong.'},
+{term:'Chain of Custody',cat:'Operational Procedures',def:'Documentation showing who handled evidence or a device and when.'},
+{term:'PII',cat:'Operational Procedures',def:'Personally identifiable information, such as names, addresses, ID numbers, or other personal data.'},
+{term:'PHI',cat:'Operational Procedures',def:'Protected health information connected to a person’s medical care or health records.'},
+{term:'UPS',cat:'Operational Procedures',def:'An uninterruptible power supply that provides temporary battery power during an outage.'},
+{term:'Surge Protector',cat:'Operational Procedures',def:'A device that helps protect equipment from sudden voltage spikes.'},
+{term:'ESD Strap',cat:'Operational Procedures',def:'A wrist strap used to prevent electrostatic discharge from damaging computer components.'},
+{term:'MSDS',cat:'Operational Procedures',def:'Safety documentation that explains how to handle and dispose of chemicals or hazardous materials.'},
+{term:'Toner Disposal',cat:'Operational Procedures',def:'An environmental procedure for properly handling printer toner as waste.'}
+];
+let currentCards=[...cards], currentIndex=0, flipped=false; const known=new Set(), practice=new Set();
+function $(id){return document.getElementById(id)}
+function render(){if(!currentCards.length)return; const c=currentCards[currentIndex]; $('cardTag').textContent=c.cat; $('cardCount').textContent=(currentIndex+1)+' / '+currentCards.length; $('cardTerm').textContent=c.term; $('cardDef').textContent=flipped?c.def:''; $('cardHint').textContent=flipped?'Click to show term':'Click to reveal the answer'; $('cardList').innerHTML=currentCards.map((x,i)=>`<div class="list-item ${i===currentIndex?'active':''}" onclick="goCard(${i})">${i+1}. ${x.term} <small>${x.cat}</small></div>`).join(''); updateStats();}
+function updateStats(){ $('knownCount').textContent=known.size; $('practiceCount').textContent=practice.size; $('setCount').textContent=currentCards.length; $('progressBar').style.width=Math.min(100,Math.round((known.size/cards.length)*100))+'%';}
+function flipCard(){flipped=!flipped;render()} function nextCard(){currentIndex=(currentIndex+1)%currentCards.length;flipped=false;render()} function prevCard(){currentIndex=(currentIndex-1+currentCards.length)%currentCards.length;flipped=false;render()} function goCard(i){currentIndex=i;flipped=false;render()} function markKnown(){known.add(currentCards[currentIndex].term);practice.delete(currentCards[currentIndex].term);updateStats();nextCard()} function markPractice(){practice.add(currentCards[currentIndex].term);known.delete(currentCards[currentIndex].term);updateStats();nextCard()}
+function shuffle(arr){return [...arr].sort(()=>Math.random()-.5)} function shuffleCards(){currentCards=shuffle(currentCards);currentIndex=0;flipped=false;render()}
+$('filter').addEventListener('change',e=>{const v=e.target.value;currentCards=v==='All'?[...cards]:cards.filter(c=>c.cat===v);currentIndex=0;flipped=false;render()});
+let matchSet=[];
+function drawNewMatchSet(){const count=8+Math.floor(Math.random()*3);matchSet=shuffle(cards).slice(0,count);renderMatch();$('matchFeedback').className='feedback';$('matchFeedback').textContent='New set loaded. Drag each term into the matching definition box.'}
+function resetMatchSet(){renderMatch();$('matchFeedback').className='feedback';$('matchFeedback').textContent='Current set reset. Try matching again.'}
+function renderMatch(){const terms=shuffle(matchSet);const defs=shuffle(matchSet);$('termBank').innerHTML=terms.map(t=>`<div class="drag-term" draggable="true" id="term-${safe(t.term)}" data-term="${esc(t.term)}">${t.term}<br><small>${t.cat}</small></div>`).join('');$('dropZones').innerHTML=defs.map((d,i)=>`<div class="drop-card" data-answer="${esc(d.term)}"><div class="definition">${i+1}. ${d.def}</div><div class="answer-slot">Drop term here</div></div>`).join('');addDnD();}
+function addDnD(){document.querySelectorAll('.drag-term').forEach(el=>{el.addEventListener('dragstart',e=>e.dataTransfer.setData('text/plain',el.dataset.term));});document.querySelectorAll('.drop-card').forEach(zone=>{zone.addEventListener('dragover',e=>{e.preventDefault();zone.classList.add('over')});zone.addEventListener('dragleave',()=>zone.classList.remove('over'));zone.addEventListener('drop',e=>{e.preventDefault();zone.classList.remove('over');const term=e.dataTransfer.getData('text/plain');const slot=zone.querySelector('.answer-slot'); if(slot.dataset.term){const old=document.querySelector(`[data-term="${cssEscape(slot.dataset.term)}"]`);if(old)old.classList.remove('used')} slot.textContent=term;slot.dataset.term=term; const dragged=document.querySelector(`[data-term="${cssEscape(term)}"]`); if(dragged)dragged.classList.add('used'); zone.classList.remove('correct','wrong');});});}
+function gradeMatchSet(){let correct=0, total=matchSet.length;document.querySelectorAll('.drop-card').forEach(zone=>{const slot=zone.querySelector('.answer-slot');const isRight=slot.dataset.term===zone.dataset.answer;if(isRight){correct++;zone.classList.add('correct');zone.classList.remove('wrong')}else{zone.classList.add('wrong');zone.classList.remove('correct')}});$('matchFeedback').className='feedback '+(correct===total?'good':'bad');$('matchFeedback').textContent=`You matched ${correct} out of ${total} correctly. Green means correct. Red means review and try again.`}
+function safe(s){return s.replace(/[^a-z0-9]/gi,'-')} function esc(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;')} function cssEscape(s){return String(s).replace(/"/g,'\\"')}
+const quizQs=[
+{q:'Which installation type starts fresh and usually removes existing files and apps?',a:'Clean install',choices:['In-place upgrade','Clean install','Repair installation','Refresh only']},
+{q:'Which command checks DNS name resolution?',a:'nslookup',choices:['ping','taskkill','nslookup','format']},
+{q:'What security idea means users only get the access needed for their job?',a:'Least privilege',choices:['Tailgating','Least privilege','Degaussing','PXE boot']},
+{q:'Which malware locks or encrypts files and demands payment?',a:'Ransomware',choices:['Spyware','Ransomware','Adware','Worm']},
+{q:'What should a technician do to keep evidence handling documented?',a:'Maintain chain of custody',choices:['Disable the firewall','Maintain chain of custody','Use quick format','Ignore the ticket']}
+];
+function renderQuiz(){ $('quiz').innerHTML=quizQs.map((q,idx)=>`<div class="quiz-card"><p>${idx+1}. ${q.q}</p>${shuffle(q.choices).map(ch=>`<button class="choice" onclick="checkChoice(this,'${esc(ch)}','${esc(q.a)}')">${ch}</button>`).join('')}</div>`).join('')}
+function checkChoice(btn,ch,a){const parent=btn.parentElement;parent.querySelectorAll('.choice').forEach(b=>b.disabled=true); if(ch===a){btn.classList.add('correct')}else{btn.classList.add('wrong'); parent.querySelectorAll('.choice').forEach(b=>{if(b.textContent===a)b.classList.add('correct')})}}
+render();drawNewMatchSet();renderQuiz();
+</script>
+</body>
+</html>
